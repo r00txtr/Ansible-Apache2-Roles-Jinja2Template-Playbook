@@ -1,0 +1,13 @@
+<VirtualHost *:80>
+    ServerAdmin webmaster@{{ ansible_hostname }}
+    ServerName quiz-roles.r00txtr1
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+    DocumentRoot /var/www/html-quiz/
+
+    <Directory /var/www/html-quiz/>
+        Options +Indexes +FollowSymlinks +Includes
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
